@@ -20,6 +20,16 @@ class profile::apache_server {
     command => '/usr/bin/pip install Flask'
   } ->
 
+  file { '/var/www':
+    ensure => directory,
+    mode   => '0777'
+  } ->
+
+  file { '/var/www/hello_world':
+    ensure => directory,
+    mode   => '0777'
+  } ->
+
   apache::vhost { 'hello.world.com':
     port                        => '8080',
     docroot                     => '/var/www/hello_world/current',
