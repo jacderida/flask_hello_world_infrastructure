@@ -22,7 +22,7 @@ class profile::apache_server {
 
   apache::vhost { 'hello.world.com':
     port                        => '8080',
-    docroot                     => '/var/www/hello_world',
+    docroot                     => '/var/www/hello_world/current',
     wsgi_daemon_process         => 'helloworld',
     wsgi_daemon_process_options =>
       {
@@ -31,7 +31,7 @@ class profile::apache_server {
         display-name => '%{GROUP}'
       },
     wsgi_process_group  => 'helloworld',
-    wsgi_script_aliases => { '/'  => '/var/www/hello_world/hello.wsgi' }
+    wsgi_script_aliases => { '/'  => '/var/www/hello_world/current/hello.wsgi' }
   } ->
 
   file { '/var/run/wsgi':
