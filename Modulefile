@@ -1,0 +1,10 @@
+name          'flask_hello_world_infrastructure'
+version       '0.1.0'
+source        ''
+author        'Chris O'Neil'
+license       'Apache 2.0'
+summary       'flask_hello_world_infrastructure'
+description   'flask_hello_world_infrastructure'
+project_page  ''
+
+dependency 'puppetlabs/stdlib'
